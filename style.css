@@ -1,0 +1,680 @@
+/* =============================================================================
+   Telecom Customer Churn Prediction — Anti-Gravity Reference Theme
+   Palette: Emerald Green + Forest Green + Metallic Gold
+   File   : style.css
+   ============================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+
+:root {
+    --bg-main: #001D16;
+    --bg-secondary: #00291F;
+    --form-card: #003126;
+    --input-bg: #00261D;
+    --emerald-primary: #00C853;
+    --green-accent: #00E676;
+    --gold-metallic: #F5C542;
+    --border-gold: #8C7628;
+    --border-subtle: rgba(140, 118, 40, 0.45);
+    --text-primary: #F5F7F2;
+    --text-secondary: #A9C7B8;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────── */
+html,
+body,
+[class*="css"] {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    color: var(--text-primary) !important;
+}
+
+/* ── Page Background ────────────────────────────────────────────────── */
+.stApp {
+    background-color: var(--bg-main) !important;
+    background-image:
+        radial-gradient(ellipse 60% 45% at 85% 25%, rgba(0, 230, 118, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 15% 85%, rgba(245, 197, 66, 0.08) 0%, transparent 55%),
+        linear-gradient(175deg, #001711 0%, #001D16 45%, #00291F 100%) !important;
+    min-height: 100vh;
+}
+
+/* ── Main Layout Container (Centered & Balanced Layout) ─────────────── */
+.block-container {
+    max-width: 1170px !important;
+    margin: 1.5rem auto !important;
+    padding: 1.8rem 2rem 3.5rem 2rem !important;
+}
+
+/* ── Header Area ────────────────────────────────────────────────────── */
+.telecom-header {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+.telecom-header-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.telecom-header-icon svg {
+    filter: drop-shadow(0 0 10px rgba(245, 197, 66, 0.5));
+}
+
+.telecom-title-box h1 {
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    line-height: 1.2 !important;
+    color: var(--text-primary) !important;
+    -webkit-text-fill-color: initial !important;
+    white-space: nowrap !important;
+}
+
+.highlight-green {
+    color: var(--green-accent) !important;
+    text-shadow: 0 0 16px rgba(0, 230, 118, 0.45);
+}
+
+.highlight-gold {
+    color: var(--gold-metallic) !important;
+    text-shadow: 0 0 16px rgba(245, 197, 66, 0.45);
+}
+
+.telecom-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin: 4px 0 0 0;
+    font-weight: 500;
+}
+
+/* ── Main Form & Right Panel Alignment ──────────────────────────────── */
+div[data-testid="stHorizontalBlock"]:has(.section-header) {
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 16px !important;
+    /* Reduced space between big box and right sidebar */
+    flex-wrap: nowrap !important;
+}
+
+div[data-testid="stHorizontalBlock"]:has(.section-header)>div[data-testid*="olumn"] {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Big Form Box: Width ends roughly 1 to 1.5 characters past "Prediction" */
+div[data-testid="stHorizontalBlock"]:has(.section-header)>div[data-testid*="olumn"]:first-child {
+    background: #003126 !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 20px !important;
+    padding: 2.2rem 2.3rem 16px 2.3rem !important;
+    box-shadow:
+        0 0 0 1px rgba(0, 230, 118, 0.10),
+        0 24px 60px rgba(0, 0, 0, 0.70) !important;
+    box-sizing: border-box !important;
+
+    min-width: 650px !important;
+
+    flex: 0 0 auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+div[data-testid="stHorizontalBlock"]:has(.section-header)>div[data-testid*="olumn"]:first-child div[data-testid="stHorizontalBlock"]:last-of-type,
+div[data-testid="stHorizontalBlock"]:has(.section-header)>div[data-testid*="olumn"]:first-child .stButton {
+    margin-bottom: 0 !important;
+}
+
+/* Right Sidebar Column: Transparent (NO Outer Box) - Matches Big Box Height */
+div[data-testid*="olumn"]:has(.right-stacked-sidebar) {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    flex: 0 0 auto !important;
+    width: 370px !important;
+    min-width: 370px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+}
+
+div[data-testid*="olumn"]:has(.right-stacked-sidebar)>div,
+div[data-testid*="olumn"]:has(.right-stacked-sidebar) div[data-testid="stVerticalBlock"],
+div[data-testid*="olumn"]:has(.right-stacked-sidebar) div[data-testid="stElementContainer"],
+div[data-testid*="olumn"]:has(.right-stacked-sidebar) div[data-testid="stMarkdownContainer"] {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    justify-content: flex-start !important;
+    height: 100% !important;
+}
+
+.form-card-container {
+    background: var(--form-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    padding: 2.2rem 2.2rem 2rem 2.2rem;
+    box-shadow:
+        0 0 0 1px rgba(0, 230, 118, 0.12),
+        0 20px 50px rgba(0, 0, 0, 0.65);
+    position: relative;
+}
+
+/* ── Section Header (Badge, Title, Count) ───────────────────────────── */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 1.2rem;
+    margin-bottom: 0.85rem;
+}
+
+.section-header:first-child {
+    margin-top: 0;
+}
+
+.badge-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--gold-metallic);
+    color: #001D16;
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(245, 197, 66, 0.4);
+    flex-shrink: 0;
+}
+
+.section-title {
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.2px;
+}
+
+.field-badge {
+    background: rgba(0, 230, 118, 0.14);
+    border: 1px solid rgba(0, 230, 118, 0.35);
+    color: var(--green-accent);
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    letter-spacing: 0.3px;
+}
+
+/* ── Field Labels ───────────────────────────────────────────────────── */
+label,
+.stSelectbox label,
+.stNumberInput label {
+    color: var(--text-secondary) !important;
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.7px !important;
+    text-transform: uppercase !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+}
+
+/* ── CATEGORICAL SELECTBOX STYLING (TEXT COLOR: PURE WHITE #FFFFFF) ──── */
+.stSelectbox>div>div,
+.stSelectbox div[data-baseweb="select"],
+.stSelectbox div[data-baseweb="select"]>div {
+    background: var(--input-bg) !important;
+    background-color: var(--input-bg) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 9px !important;
+    min-height: 42px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stSelectbox>div>div:hover,
+.stSelectbox div[data-baseweb="select"]:hover {
+    border-color: var(--green-accent) !important;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.25) !important;
+}
+
+.stSelectbox>div>div:focus-within,
+.stSelectbox div[data-baseweb="select"]:focus-within {
+    border-color: var(--gold-metallic) !important;
+    box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.25), 0 0 12px rgba(245, 197, 66, 0.30) !important;
+}
+
+/* Selected Value Inside Categorical Selectbox — Always Visible Crisp White */
+.stSelectbox [data-baseweb="select"] div,
+.stSelectbox [data-baseweb="select"] span,
+.stSelectbox [data-baseweb="select"] [aria-selected="true"],
+.stSelectbox [data-baseweb="select"] [data-testid="stMarkdownContainer"] p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: 0.93rem !important;
+    font-weight: 600 !important;
+}
+
+/* Dropdown arrow icon */
+.stSelectbox svg {
+    fill: var(--gold-metallic) !important;
+}
+
+/* ── CATEGORICAL DROPDOWN POPUP MENU (DARK GREEN BG + WHITE TEXT) ───── */
+div[data-baseweb="popover"],
+div[data-baseweb="popover"]>div,
+div[data-baseweb="popover"] ul,
+div[data-baseweb="menu"],
+ul[role="listbox"],
+div[role="listbox"],
+div[data-testid*="VirtualDropdown"] {
+    background-color: #00261D !important;
+    background: #00261D !important;
+    border: 1.5px solid var(--border-gold) !important;
+    border-radius: 11px !important;
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.85), 0 0 20px rgba(0, 200, 83, 0.15) !important;
+}
+
+div[data-baseweb="popover"] li,
+div[data-baseweb="menu"] li,
+ul[role="listbox"] li,
+li[role="option"],
+div[role="option"] {
+    background-color: transparent !important;
+    background: transparent !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-size: 0.94rem !important;
+    font-weight: 500 !important;
+    padding: 10px 14px !important;
+    transition: background 0.15s ease !important;
+}
+
+div[data-baseweb="popover"] li *,
+div[data-baseweb="menu"] li *,
+ul[role="listbox"] li *,
+li[role="option"] * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* Option Hover & Selected State in Categorical Dropdown */
+div[data-baseweb="popover"] li:hover,
+div[data-baseweb="menu"] li:hover,
+ul[role="listbox"] li:hover,
+li[role="option"]:hover,
+li[aria-selected="true"],
+li[data-highlighted="true"] {
+    background-color: rgba(0, 200, 83, 0.30) !important;
+    background: rgba(0, 200, 83, 0.30) !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+div[data-baseweb="popover"] li:hover *,
+div[data-baseweb="menu"] li:hover *,
+ul[role="listbox"] li:hover *,
+li[role="option"]:hover *,
+li[aria-selected="true"] * {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+/* ── NUMERICAL INPUT STYLING (PRESERVED & UNCHANGED) ─────────────────── */
+.stNumberInput>div>div {
+    background: var(--input-bg) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 9px !important;
+    min-height: 42px !important;
+    transition: all 0.2s ease !important;
+}
+
+.stNumberInput>div>div:hover {
+    border-color: var(--green-accent) !important;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.25) !important;
+}
+
+.stNumberInput>div>div:focus-within {
+    border-color: var(--gold-metallic) !important;
+    box-shadow: 0 0 0 2px rgba(245, 197, 66, 0.25), 0 0 12px rgba(245, 197, 66, 0.30) !important;
+}
+
+.stNumberInput>div>div>input {
+    color: var(--text-primary) !important;
+    font-size: 0.92rem !important;
+    font-weight: 500 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.stNumberInput button {
+    background: transparent !important;
+    border: none !important;
+    color: var(--gold-metallic) !important;
+}
+
+.stNumberInput button:hover {
+    color: #ffffff !important;
+    background: rgba(0, 230, 118, 0.20) !important;
+    border-radius: 6px !important;
+}
+
+/* ── Buttons: Predict (Left Corner) & Reset (Right Corner) — IDENTICAL STYLE ── */
+.stButton,
+div[data-testid="stButton"],
+div[data-testid*="olumn"] .stButton {
+    margin-top: 24px !important;
+}
+
+.stButton button,
+.stButton button[kind="primary"],
+.stButton button[kind="secondary"],
+.stButton button[data-testid*="primary"],
+.stButton button[data-testid*="secondary"],
+div[data-testid*="olumn"] .stButton button {
+    background: #00261D !important;
+    background-color: #00261D !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    border: 1.5px solid var(--gold-metallic) !important;
+    border-radius: 9999px !important;
+    padding: 0.72rem 1.8rem !important;
+    font-weight: 700 !important;
+    font-size: 0.98rem !important;
+    letter-spacing: 0.3px !important;
+    box-shadow:
+        0 0 14px rgba(245, 197, 66, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+}
+
+.stButton button:hover,
+.stButton button[kind="primary"]:hover,
+.stButton button[kind="secondary"]:hover,
+.stButton button[data-testid*="primary"]:hover,
+.stButton button[data-testid*="secondary"]:hover,
+div[data-testid*="olumn"] .stButton button:hover {
+    transform: translateY(-2px) !important;
+    background: #003629 !important;
+    background-color: #003629 !important;
+    border-color: #ffe082 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    box-shadow: 0 0 22px rgba(245, 197, 66, 0.40) !important;
+}
+
+.stButton button:active,
+.stButton button[kind="primary"]:active,
+.stButton button[kind="secondary"]:active,
+div[data-testid*="olumn"] .stButton button:active {
+    transform: translateY(0px) !important;
+}
+
+.stButton button p {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+    font-weight: inherit !important;
+    font-size: inherit !important;
+    margin: 0 !important;
+}
+
+/* ── Standalone Right-Side Layout (Stacked: Enlarged Tower Top + Prediction Card Directly Underneath) ─ */
+.right-stacked-sidebar {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+    gap: 16px !important;
+    width: 100% !important;
+    height: 100% !important;
+    flex: 1 1 auto !important;
+}
+
+.tower-standalone-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    filter: drop-shadow(0 24px 45px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 30px rgba(0, 230, 118, 0.40)) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    flex: 0 0 auto !important;
+}
+
+.tower-standalone-wrapper svg {
+    width: 100% !important;
+    max-width: 370px !important;
+    height: 510px !important;
+}
+
+.sidebar-info-card {
+    width: 270px !important;
+    min-width: 250px !important;
+    max-width: 300px !important;
+    min-height: 228px !important;
+    flex: 1 1 auto !important;
+    background: #00261D !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem 1.4rem 1.4rem 1.4rem !important;
+    box-shadow:
+        0 0 0 1px rgba(0, 230, 118, 0.10),
+        0 24px 60px rgba(0, 0, 0, 0.70) !important;
+    box-sizing: border-box !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+}
+
+.sidebar-info-card h4 {
+    margin: 0 0 4px 0 !important;
+    color: var(--gold-metallic) !important;
+    font-size: 1.15rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.3px !important;
+}
+
+.sidebar-info-card .card-subtitle {
+    font-size: 0.84rem !important;
+    color: var(--text-secondary) !important;
+    margin: 0 0 10px 0 !important;
+    font-weight: 500 !important;
+}
+
+.sidebar-info-card .card-motto {
+    font-size: 0.76rem !important;
+    color: rgba(169, 199, 184, 0.85) !important;
+    margin: 0 0 14px 0 !important;
+    line-height: 1.4 !important;
+}
+
+.sidebar-bar-chart {
+    display: flex !important;
+    align-items: flex-end !important;
+    gap: 6px !important;
+    height: 42px !important;
+    padding-top: 6px !important;
+    margin-top: auto !important;
+}
+
+.sidebar-bar-chart .bar {
+    border-radius: 3px 3px 0 0 !important;
+    flex: 1 !important;
+}
+
+.bar-gold {
+    background: var(--gold-metallic) !important;
+    opacity: 0.85 !important;
+}
+
+.bar-green {
+    background: var(--green-accent) !important;
+    opacity: 0.90 !important;
+}
+
+.bar-h-45 {
+    height: 45% !important;
+}
+
+.bar-h-75 {
+    height: 75%;
+}
+
+.bar-h-60 {
+    height: 60%;
+}
+
+.bar-h-95 {
+    height: 95%;
+}
+
+/* ── Result Cards ───────────────────────────────────────────────────── */
+.churn-card-unhappy {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.18), rgba(185, 28, 28, 0.08)) !important;
+    border: 1px solid rgba(239, 68, 68, 0.50) !important;
+    border-left: 6px solid #ef4444 !important;
+    border-radius: 14px !important;
+    padding: 1.4rem 1.8rem !important;
+    margin-top: 1.6rem !important;
+    box-shadow: 0 6px 30px rgba(239, 68, 68, 0.25) !important;
+}
+
+.churn-card-unhappy h3 {
+    color: #fca5a5 !important;
+    margin: 0 0 6px !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+}
+
+.churn-card-unhappy p {
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    opacity: 0.95 !important;
+}
+
+.churn-card-happy {
+    background: linear-gradient(135deg, rgba(0, 200, 83, 0.20), rgba(245, 197, 66, 0.10)) !important;
+    border: 1px solid var(--border-gold) !important;
+    border-left: 6px solid var(--green-accent) !important;
+    border-radius: 14px !important;
+    padding: 1.4rem 1.8rem !important;
+    margin-top: 1.6rem !important;
+    box-shadow:
+        0 6px 32px rgba(0, 230, 118, 0.28),
+        0 0 20px rgba(245, 197, 66, 0.15) !important;
+}
+
+.churn-card-happy h3 {
+    color: var(--green-accent) !important;
+    margin: 0 0 6px !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+}
+
+.churn-card-happy p {
+    color: #ffffff !important;
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    opacity: 0.95 !important;
+}
+
+.churn-card-warning {
+    background: rgba(0, 49, 38, 0.85) !important;
+    border: 1.5px solid rgba(255, 255, 255, 0.65) !important;
+    border-left: 6px solid #ffffff !important;
+    border-radius: 14px !important;
+    padding: 1.2rem 1.8rem !important;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.50) !important;
+    margin-top: 1.4rem !important;
+}
+
+.churn-card-warning p {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 0.96rem !important;
+    margin: 0 !important;
+}
+
+/* ── Hide Streamlit Chrome ──────────────────────────────────────────── */
+#MainMenu,
+footer,
+header {
+    visibility: hidden;
+}
+
+/* ── Scrollbars ─────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-gold);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-metallic);
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+    .right-unified-container {
+        flex-direction: column !important;
+        gap: 1.4rem !important;
+        padding: 1.8rem 1.4rem !important;
+    }
+
+    .tower-side,
+    .card-side {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .sidebar-info-card {
+        max-width: 280px !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .block-container {
+        padding: 1.2rem 1rem !important;
+        max-width: 100% !important;
+    }
+
+    div[data-testid="stHorizontalBlock"]:has(.section-header)>div[data-testid*="olumn"]:first-child {
+        padding: 1.4rem 1.2rem !important;
+    }
+
+    .telecom-title-box h1 {
+        font-size: 1.6rem !important;
+    }
+}
