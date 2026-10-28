@@ -89,8 +89,7 @@ Telecom Customer Churn prediction/
 ├── ML_Project.py              # Main Streamlit web application & ML workflow
 ├── Telco-Customer-Churn.csv   # Telecom customer dataset
 ├── style.css                  # Custom styling and layout design
-├── README.md                  # Comprehensive project documentation
-└── .gitignore                 # Files excluded from version control
+└── README.md                  # Comprehensive project documentation
 ```
 
 ---
@@ -99,8 +98,8 @@ Telecom Customer Churn prediction/
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/telecom-customer-churn-prediction.git
-cd telecom-customer-churn-prediction
+git clone https://github.com/kotrashivakumar1804/Telecom_Customer_Churn_Prediction.git
+cd Telecom_Customer_Churn_Prediction
 ```
 
 ### 2. Install Dependencies
