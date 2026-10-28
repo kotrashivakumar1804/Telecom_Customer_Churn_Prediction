@@ -6,11 +6,13 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from xgboost import XGBClassifier
 from sklearn.metrics import precision_score, accuracy_score, recall_score, f1_score, classification_report
+import os
 import streamlit.components.v1 as _stc, json as _json, textwrap, hashlib
 
 # ── Load external CSS (JS injection bypasses Streamlit 1.36+ DOMPurify) ────
-# Spacing, prediction card alignment & tower size update v8
-with open('style.css', encoding='utf-8-sig') as _f:
+_curr_dir = os.path.dirname(os.path.abspath(__file__))
+css_file_path = os.path.join(_curr_dir, 'style.css')
+with open(css_file_path, encoding='utf-8-sig') as _f:
     _css = _f.read()
 _css_hash = hashlib.md5(_css.encode('utf-8')).hexdigest()[:8]
 _stc.html(
@@ -48,7 +50,8 @@ def reset_form():
         slt.session_state[k] = v
 
 # ── Train Model ─────────────────────────────────────────────────────────────
-Telecom = pd.read_csv('Telco-Customer-Churn.csv')
+csv_file_path = os.path.join(_curr_dir, 'Telco-Customer-Churn.csv')
+Telecom = pd.read_csv(csv_file_path)
 Telecom['TotalCharges'] = pd.to_numeric(Telecom['TotalCharges'], errors='coerce')
 
 group_cols = [col for col in Telecom.columns if col not in ['customerID', 'TotalCharges']]
